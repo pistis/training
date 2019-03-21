@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/two-sum/
 /**
+ * time complexity : O(n2), brute force
  * @param {number[]} nums
  * @param {number} target
  * @return {number[]}

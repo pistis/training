@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/pascals-triangle/submissions/
 /**
+ * time complexity : O(n2), brute force
  * @param {number} numRows
  * @return {number[][]}
  */

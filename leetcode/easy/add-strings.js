@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/add-strings/
 /**
+ * time complexity : O(n), brute force
  * @param {string} num1
  * @param {string} num2
  * @return {string}
