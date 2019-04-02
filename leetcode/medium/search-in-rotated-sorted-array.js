@@ -55,6 +55,7 @@ var search = function(nums, target) {
 
 // second solution
 /**
+ * time complexity O(log n)
  * @param {number[]} nums
  * @param {number} target
  * @return {number}
