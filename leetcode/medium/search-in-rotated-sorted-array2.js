@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
 /**
- * time complexity O(log n + ??)
+ * time complexity O(n)
  * @param {number[]} nums
  * @param {number} target
  * @return {number}
