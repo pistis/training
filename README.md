@@ -2,5 +2,5 @@
 algorithm training(quiz)
 
 # reference
-* [hackerrank](www.hackerrank.com)
+* [hackerrank](https://www.hackerrank.com/)
 * [leetcode](https://leetcode.com/)
