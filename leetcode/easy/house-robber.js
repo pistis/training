@@ -8,21 +8,25 @@
 var rob = function(nums) {
   if (nums.length === 0) return 0;
 
-  let candidateFirst = 0;
-  let candidateSecond = 0;
-  let max = 0;
+  let adjacentHouseOne = 0;
+  let adjacentHouseTwo = 0;
+  let robbedMoney = 0;
+
   for (let i = 0; i < nums.length; i++) {
-    let current = nums[i];
-    candidateFirst = nums[i - 3] || 0;
-    candidateSecond = nums[i - 2] || 0;
-    current += Math.max(candidateFirst, candidateSecond);
-    nums[i] = current;
-    if (max < nums[i]) {
-      max = nums[i];
+    nums[i];
+    adjacentHouseOne = nums[i - 3] || 0;
+    adjacentHouseTwo = nums[i - 2] || 0;
+    nums[i] += Math.max(adjacentHouseOne, adjacentHouseTwo);
+
+    if (robbedMoney < nums[i]) {
+      robbedMoney = nums[i];
     }
   }
 
-  return max;
+  return robbedMoney;
 };
-console.assert(addStrings("0", "0").toString() === "0".toString());
-console.assert(addStrings("123", "12").toString() === "135".toString());
+
+console.assert(rob([1, 2, 3, 1]) === 4);
+console.assert(rob([2, 7, 9, 3, 1]) === 12);
+console.assert(rob([1, 10, 2]) === 10);
+console.assert(rob([1, 10, 9, 2]) === 12);
