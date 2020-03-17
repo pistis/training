@@ -7,30 +7,25 @@
  * @return {string}
  */
 var licenseKeyFormatting = function(S, K) {
-  let formatted = "";
+  let licenseKey = "";
   const dash = "-";
-  const len = S.length;
   let count = 0,
-    pic = "";
-  for (let i = len - 1; i >= 0; i--) {
+    piece = "";
+  for (let i = S.length - 1; i >= 0; i--) {
     let ch = S[i];
     if (ch === dash) {
       continue;
-    } else {
-      count++;
-      pic = ch + pic;
-      if (count === K) {
-        formatted = dash + pic.toUpperCase() + formatted;
-        pic = "";
-        count = 0;
-      }
+    }
+    count++;
+    piece = ch + piece;
+    if (count === K) {
+      licenseKey = dash + piece.toUpperCase() + licenseKey;
+      piece = "";
+      count = 0;
     }
   }
-  formatted = pic.toUpperCase() + formatted;
-  if (formatted[0] === dash) {
-    formatted = formatted.substr(1);
-  }
-  return formatted;
+  licenseKey = piece.toUpperCase() + licenseKey;
+  return licenseKey[0] === dash ? licenseKey.substr(1) : licenseKey;
 };
 
 console.assert(licenseKeyFormatting("5F3Z-2e-9-w", 4) === "5F3Z-2E9W");
