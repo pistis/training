@@ -28,14 +28,11 @@ function TreeNode(val) {
  * @return {TreeNode}
  */
 var deserialize = function(data) {
-  if (!data) return null;
-  const list = data.split(",").map(val => val || null);
+  const list = data ? data.split(",").map(val => val || null) : [null];
   if (list[0] === null) return null;
   const root = new TreeNode(list[0]);
-  if (list.length === 1) return root;
 
-  const queue = [];
-  queue.push(root);
+  const queue = [root];
   for (let i = 1; i < list.length; i += 2) {
     let node = null;
     node = queue.shift();
@@ -66,8 +63,7 @@ var serialize = function(node) {
   if (!node) return "";
 
   let serialzied = [];
-  const queue = [];
-  queue.push(node);
+  const queue = [node];
 
   while (queue.length) {
     const item = queue.shift();
@@ -99,14 +95,10 @@ const case1Input = [1, 2, 3].join(",");
 const case2Input = [1, null, 2, 3].join(",");
 const case3Input = [5, 4, 7, 3, null, 2, null, -1, null, 9].join(",");
 const case4Input = [1, 2, 3, null, null, 4, 5].join(",");
+const case5Input = [1, -1, 2, -2].join(",");
 
 console.assert(serialize(deserialize(case1Input)) === case1Input);
 console.assert(serialize(deserialize(case2Input)) === case2Input);
 console.assert(serialize(deserialize(case3Input)) === case3Input);
 console.assert(serialize(deserialize(case4Input)) === case4Input);
-
-const case5Input = [1, -1, 2, -2].join(",");
-const case5Output = deserialize(case5Input);
-console.log(case5Output);
-const restoreInput = serialize(case5Output);
-console.log(restoreInput);
+console.assert(serialize(deserialize(case5Input)) === case5Input);
