@@ -1,4 +1,5 @@
 /**
+ * time over...한 해결방법
  * @param {string} s
  * @return {string}
  */
