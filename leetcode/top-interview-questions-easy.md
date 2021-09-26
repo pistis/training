@@ -27,7 +27,7 @@
 
 ### easy
 
-- TODO
+- [Intersection of Two Arrays II](./easy/intersection-of-two-arrays.md)
 
 ### medium
 

@@ -1,46 +1,33 @@
 /**
- * @param {string} columnTitle
- * @return {number}
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
  */
-var titleToNumber = function (columnTitle) {
-  const numbers = {
-    A: 1,
-    B: 2,
-    C: 3,
-    D: 4,
-    E: 5,
-    F: 6,
-    G: 7,
-    H: 8,
-    I: 9,
-    J: 10,
-    K: 11,
-    L: 12,
-    M: 13,
-    N: 14,
-    O: 15,
-    P: 16,
-    Q: 17,
-    R: 18,
-    S: 19,
-    T: 20,
-    U: 21,
-    V: 22,
-    W: 23,
-    X: 24,
-    Y: 25,
-    Z: 26,
-  };
+var intersect = function (nums1, nums2) {
+  const frequency = {};
 
-  let sum = 0;
-  for (let i = columnTitle.length - 1, j = 0; i >= 0; i--, j++) {
-    const unit = Math.pow(26, j);
-    sum += numbers[columnTitle[i]] * unit;
+  for (let i = 0; i < nums1.length; i++) {
+    if (frequency[nums1[i]] === undefined) {
+      frequency[nums1[i]] = [1, 0];
+    } else {
+      frequency[nums1[i]][0] += 1;
+    }
   }
-  return sum;
+
+  for (let i = 0; i < nums2.length; i++) {
+    if (frequency[nums2[i]]) frequency[nums2[i]][1] += 1;
+  }
+
+  const result = [];
+  Object.keys(frequency).forEach((key) => {
+    const frequencyCnt = Math.min(frequency[key][0], frequency[key][1]);
+    for (let i = 0; i < frequencyCnt; i++) {
+      result.push(key);
+    }
+  });
+
+  return result;
 };
 
-console.assert(titleToNumber("A") === 1);
-console.assert(titleToNumber("AB") === 28);
-console.assert(titleToNumber("ZY") === 701);
-console.assert(titleToNumber("FXSHRXW") === 2147483647);
+console.log(intersect([1, 2, 2, 1], [2, 2])); // [2,2]
+console.log(intersect([4, 9, 5], [9, 4, 9, 8, 4])); // [4,9]
