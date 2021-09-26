@@ -17,6 +17,7 @@
 ### easy
 
 - [Roman to Integer](./easy/roman-to-integer.md)
+- [Excel Sheet Column Number](./easy/excel-sheet-column-number.md)
 
 ### medium
 
