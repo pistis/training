@@ -27,7 +27,7 @@
 
 ### easy
 
-- [Intersection of Two Arrays II](./easy/intersection-of-two-arrays.md)
+- [Intersection of Two Arrays II](./easy/intersection-of-two-arrays-ii.md)
 
 ### medium
 
