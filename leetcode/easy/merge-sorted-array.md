@@ -24,19 +24,19 @@ var merge = function (nums1, m, nums2, n) {
 
 const arr1 = [1, 2, 3, 0, 0, 0];
 merge(arr1, 3, [2, 5, 6], 3);
-console.log(arr1);
+console.log(arr1);  // [1, 2, 2, 3, 5, 6]
 
 const arr2 = [1];
 merge(arr2, 1, [], 0);
-console.log(arr2);
+console.log(arr2);  // [1]
 
 const arr3 = [0];
 merge(arr3, 0, [1], 1);
-console.log(arr3);
+console.log(arr3);  // [1]
 
 const arr4 = [-1, 0, 0, 3, 3, 3, 0, 0, 0];
 merge(arr4, 6, [1, 2, 2], 3);
-console.log(arr4);
+console.log(arr4);  // [-1, 0, 0, 1, 2, 2, 3, 3, 3]
 ```
 
 ## 도전
