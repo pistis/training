@@ -28,7 +28,8 @@
 ### easy
 
 - [Intersection of Two Arrays II](./easy/intersection-of-two-arrays-ii.md)
-
+- [Linked List Cycle](./easy/linked-list-cycle.md)
+- [Missing Number](./easy/missing-number.md)
 ### medium
 
 - TODO
