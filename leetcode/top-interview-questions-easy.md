@@ -35,6 +35,7 @@
 - TODO
 
 ## Tree
+- [Maximum Depth of Binary Tree](./easy/maximum-depth-of-binary-tree.md)
 
 ### easy
 
