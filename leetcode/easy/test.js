@@ -1,22 +1,21 @@
 /**
- * @param {number[]} nums
- * @return {number}
+ * @param {number[]} digits
+ * @return {number[]}
  */
-var missingNumber = function (nums) {
-  let sum = 0;
-  for (let i = 1; i <= nums.length; i++) {
-    sum += i;
+var plusOne = function (digits) {
+  let carry = 1;
+  for (let i = digits.length - 1; i >= 0; i--) {
+    const sum = digits[i] + carry;
+    carry = parseInt(sum / 10);
+    digits[i] = carry ? sum % 10 : sum;
   }
-
-  return (
-    sum -
-    nums.reduce((acc, cur) => {
-      return acc + cur;
-    }, 0)
-  );
+  if (carry) {
+    digits.unshift(carry);
+  }
+  return digits;
 };
 
-console.assert(missingNumber([3, 0, 1]) === 2);
-console.assert(missingNumber([0, 1]) === 2);
-console.assert(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1]) === 8);
-console.assert(missingNumber([0]) === 1);
+console.assert(plusOne([1, 2, 3]).toString() === [1, 2, 4].toString());
+console.assert(plusOne([4, 3, 2, 1]).toString() === [4, 3, 2, 2].toString());
+console.assert(plusOne([0]).toString() === [1].toString());
+console.assert(plusOne([9]).toString() === [1, 0].toString());

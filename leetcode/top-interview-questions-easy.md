@@ -7,7 +7,7 @@
 - [Remove Duplicates from Sorted Array](./easy/remove-dupilicates-from-sorted-array.js)
 - [Contains Duplicate](./easy/contains-duplicate.js)
 - [Merge Sorted Array](./easy/merge-sorted-array.md)
-
+- [Plus One](./easy/plus-one.md)
 ### medium
 
 - [Rotate Array](./medium/rotate-array.js)
