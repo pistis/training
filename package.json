@@ -14,10 +14,10 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "babel": "^5.8.23",
+    "babel": "^6.23.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
-    "mocha": "^8.3.2",
+    "mocha": "^10.1.0",
     "should": "^7.0.1"
   }
 }
